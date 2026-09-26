@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Толмачева Татьяна — Интерактивное резюме</title>
+<style>
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent2: #818cf8;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.hero {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  padding: 40px 0;
+}
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+.hero h1 { margin: 0 0 8px; font-size: 2rem; }
+.hero p { margin: 0; color: var(--muted); }
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56,189,248,.4);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn-outline:hover { background: rgba(56,189,248,.1); }
+nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  border-top: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background .2s, color .2s;
+}
+nav a:hover { background: #334155; color: var(--text); }
+section {
+  padding: 40px 0;
+  border-bottom: 1px solid #334155;
+}
+h2 { font-size: 1.6rem; margin-top: 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #334155;
+  transition: transform .2s, border-color .2s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.card h3 { margin-top: 0; color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.tag {
+  background: #334155;
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: .9rem;
+}
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.tab {
+  background: #334155;
+  color: var(--muted);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+}
+.tab.active, .tab:hover { background: var(--accent); color: #0f172a; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.screenshots img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+.contact-list { list-style: none; padding: 0; }
+.contact-list li { margin-bottom: 8px; }
+.contact-list a { color: var(--accent); text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; }
+footer {
+  padding: 24px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .9rem;
+}
+@media (max-width: 600px) {
+  .hero { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="hero">
+    <div class="avatar">ТТ</div>
+    <div>
+      <h1>Толмачева Татьяна</h1>
+      <p>Студентка направления «Информатика и вычислительная техника», фокус на веб-разработке и программировании.</p>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn" href="resume.pdf" download>Скачать PDF</a>
+        <button class="btn btn-outline" onclick="window.print()">Сохранить как PDF</button>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#skills">Навыки</a>
+    <a href="#education">Образование</a>
+    <a href="#projects">Проекты</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+
+  <section id="skills">
+    <h2>Навыки</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Языки программирования</h3>
+        <div class="tags">
+          <span class="tag">1С</span>
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">HTML</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Инструменты</h3>
+        <div class="tags">
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">IntelliJ IDEA</span>
+          <span class="tag">Figma</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Методологии</h3>
+        <div class="tags">
+          <span class="tag">Agile</span>
+          <span class="tag">Scrum</span>
+          <span class="tag">Kanban</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Образование</h2>
+    <div class="card">
+      <h3>Уральский государственный экономический университет</h3>
+      <p>
+        <strong>Программа:</strong> «Программное обеспечение автоматизированных систем»<br>
+        <strong>Направление:</strong> «Информатика и вычислительная техника»<br>
+        <strong>Курс:</strong> 4 курс
+      </p>
+      <p>
+        <a href="https://www.usue.ru/" target="_blank" rel="noopener">Сайт университета</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Проекты</h2>
+    <div class="card">
+      <h3>Разработка сайта для молодёжного проекта «Просмотр кино под открытым небом»</h3>
+      <p>
+        <strong>Цель:</strong> разработать сайт для молодёжного проекта «Просмотр кино под открытым небом».<br>
+        <strong>Стек:</strong> HTML, CSS, JavaScript.<br>
+        <strong>Результат:</strong> многостраничный адаптивный сайт для мобильных устройств.
+      </p>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="desc">Описание</button>
+        <button class="tab" data-tab="shots">Скриншоты</button>
+        <button class="tab" data-tab="scheme">Схема</button>
+      </div>
+
+      <div id="desc" class="tab-panel active">
+        <p>
+          Сайт включает главную страницу, разделы «О проекте», «Фильмы», «Контакты».
+          Реализована адаптивная вёрстка, навигация и интерактивные элементы.
+        </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+          <a class="btn" href="https://github.com/ваш-логин/имя-репозитория" target="_blank" rel="noopener">Посмотреть код</a>
+          <a class="btn btn-outline" href="project-report.pdf" download>Скачать отчёт PDF</a>
+        </div>
+      </div>
+
+      <div id="shots" class="tab-panel">
+        <div class="screenshots">
+          <img src="images/cinema1.png" alt="Главный экран сайта">
+          <img src="images/cinema2.png" alt="Раздел о проекте">
+        </div>
+      </div>
+
+      <div id="scheme" class="tab-panel">
+        <pre class="mermaid">
+graph LR
+  A[Пользователь] --> B[Главная]
+  A --> C[О проекте]
+  A --> D[Фильмы]
+  A --> E[Контакты]
+  B --> F[Адаптивная вёрстка]
+  C --> F
+  D --> F
+  E --> F
+        </pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <ul class="contact-list">
+      <li>Телефон: <a href="tel:+71234567890">+7 123 456 78 90</a></li>
+      <li>Почта: <a href="mailto:abcdefg@emai.ru">abcdefg@emai.ru</a></li>
+      <li>GitHub: <a href="https://github.com/TanyaTolm" target="_blank" rel="noopener">github.com/ваш-логин</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2026 Толмачева Татьяна. Интерактивное резюме.</p>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const parent = btn.closest('.card');
+    parent.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    parent.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    parent.querySelector('#' + btn.dataset.tab).classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
